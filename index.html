@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KINZAMAX KM Uniforms | In-House Manufacturing & Design in Jeddah</title>
+    <title>KINZAMAX KM Uniforms | Custom Manufacturing & Design in Jeddah</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font -->
@@ -11,16 +11,25 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f7f9; /* Light background for contrast */
+            background-color: #ffffff; /* Crisp white background */
+            color: #1a1a1a;
         }
-        /* Custom blue color for branding */
+        /* Primary Branding Blue */
         .brand-primary {
-            background-color: #004c99; /* Deep Corporate Blue */
+            background-color: #004c99; 
         }
         .text-brand-primary {
             color: #004c99;
         }
-        /* WhatsApp floating button style */
+        /* Accent Color (Striking Orange, inspired by industrial safety/highlights) */
+        .brand-accent {
+            background-color: #FF5733;
+        }
+        .text-brand-accent {
+            color: #FF5733;
+        }
+        
+        /* WhatsApp floating button style - FIXED */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -31,15 +40,16 @@
             color: white;
             border-radius: 50%;
             text-align: center;
-            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s;
         }
         .whatsapp-float:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
         /* Custom styles for the category cards */
         .category-card {
@@ -47,210 +57,291 @@
         }
         .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
         }
-        /* Spinner CSS */
-        .spinner {
-            border-top-color: #004c99;
-            border-right-color: transparent;
-            border-bottom-color: #004c99;
-            border-left-color: transparent;
+        /* Step Process styling */
+        .step-item {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .step-item:before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: #004c99;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .step-line {
+            position: absolute;
+            left: 1.25rem;
+            top: 2.5rem;
+            bottom: -2.5rem;
+            width: 2px;
+            background-color: #e0e0e0;
+            z-index: -1;
+        }
+        .step-item:last-child .step-line {
+            display: none;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Floating Button (Icon fixed and sleek) -->
     <a href="https://wa.me/966573128127" target="_blank" class="whatsapp-float group" aria-label="Chat with KINZAMAX on WhatsApp">
-        <!-- WhatsApp Icon SVG (Font Awesome Style) -->
-        <svg class="w-8 h-8 group-hover:animate-pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
-            <path d="M380.9 97.1C339.4 55.4 283.4 32 225.4 32c-118.8 0-216 97.2-216 216 0 38.6 10.9 76.5 31.7 110.3l-34.7 127.3 130-34.2c32.7 17.8 69.4 27.2 106 27.2 118.8 0 216-97.2 216-216 0-58-23.4-114-65.1-155.9zM225.4 416c-30.8 0-61-8.1-87.3-24.3l-12.8-7.7-128 33.7 34.7-127.3-8.2-13.4c-22.6-36.8-34.6-77.9-34.6-120 0-99 80.2-179.2 179.2-179.2 48.7 0 94.7 19 128.9 53.2 34.2 34.2 53.2 80.2 53.2 128.9 0 99-80.2 179.2-179.2 179.2zm85-139.4c-4.6-2.4-15.5-7.7-17.9-8.6-2.4-1.1-4.9-1.2-6.9 1.2-2 2.4-7.7 8.6-9.4 10.3-1.6 1.7-3.4 1.9-6.3 1.2-13.6-5.4-32.5-19.9-46-38.6-11.2-15.3-18.9-34.3-21.1-38.3-2.1-4.2-.2-6.4 1.9-8.4 1.8-1.7 4.5-4.2 6.7-6.2 2.2-2.1 2.9-3.4 4.3-6.1 1.4-2.7.7-5.1-.3-7.1-1.1-2-6.9-16.5-9.6-22.6-2.6-6-5.3-5.2-7.1-5.3-1.7-.1-3.6-.1-5.5-.1-1.9 0-4.9.8-7.4 3.7-2.4 3-9.3 9.1-9.3 22.3 0 13.2 9.5 25.8 10.8 27.6 1.3 1.8 18.6 28.4 45.4 39.5 26.8 11.2 50.8 10.3 57.5 8.9 6.8-1.4 17.5-7.1 19.9-14.1 2.4-7 2.4-12.9 1.7-14.1-1-1.2-3.7-1.8-7.8-3.9z"/>
+        <!-- Clean, Standard WhatsApp Icon SVG -->
+        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0001 2.00008C6.5401 2.00008 2.1551 6.38508 2.1551 11.8451C2.1551 13.6001 2.6281 15.2861 3.5221 16.7441L2.0001 22.0001L7.4201 20.4801C8.8021 21.2851 10.3541 21.7251 12.0001 21.7251C17.4601 21.7251 21.8451 17.3401 21.8451 11.8801C21.8451 6.4201 17.4601 2.00008 12.0001 2.00008ZM16.4851 15.6981C16.2081 16.3531 15.0591 16.9691 14.2801 17.0751C13.6261 17.1591 12.8701 17.1121 12.1471 16.9081C9.6911 16.2161 7.7661 13.9111 7.6431 13.8811C7.5201 13.8511 7.3061 13.5671 7.3061 13.5671C7.3061 13.5671 6.9451 13.1251 6.9451 13.1251C6.7321 12.8551 6.7031 12.6511 6.9011 12.4471C6.9011 12.4471 7.1561 12.1921 7.4251 11.9561C7.6891 11.7251 7.9151 11.7551 8.1631 12.0031C8.5991 12.4451 9.0881 12.9811 9.0881 12.9811C9.0881 12.9811 9.2811 13.2981 9.4231 13.3851C9.7211 13.5551 9.9471 13.6231 10.0571 13.5181C10.2981 13.2841 12.3391 11.2381 14.5421 9.0271C14.8691 8.7001 15.1431 8.5201 15.4281 8.5131C15.7131 8.5061 16.0271 8.5441 16.2411 9.0061C16.4551 9.4681 16.8971 10.4571 16.8971 10.4571C16.8971 10.4571 16.9921 10.6621 16.9621 10.7491C16.9321 10.8361 16.4851 11.2851 16.4851 11.2851C16.2751 11.4921 16.2201 11.5201 16.0351 11.7771C15.8501 12.0341 15.4051 12.4831 15.2491 12.6391C15.0931 12.7951 14.8991 12.9751 14.6711 12.9751C14.4431 12.9751 14.2251 12.9031 14.0721 12.7501C14.0721 12.7501 13.8041 12.4791 13.3751 12.2471C12.9461 12.0151 12.4921 11.7941 12.0311 11.6601C11.5701 11.5261 11.3321 11.3851 11.0951 11.1461C10.8581 10.9071 10.7201 10.6661 10.5831 10.4301C10.4461 10.1941 10.2221 9.9931 9.9701 9.9931C9.7181 9.9931 9.5391 10.1731 9.4671 10.3661C9.4671 10.3661 9.2151 10.7461 9.0201 10.9701C8.8251 11.1941 8.7611 11.2641 8.6531 11.3971C8.5451 11.5301 8.4111 11.6911 8.3561 11.7451C8.3011 11.7991 8.2461 11.8271 8.2461 11.8271C8.2461 11.8271 8.2161 11.8551 8.2161 11.8551C8.1631 11.9121 8.0191 12.0711 7.9711 12.1651C7.9231 12.2591 7.8541 12.3891 7.8281 12.4351C7.8021 12.4811 7.7651 12.5691 7.7651 12.5691Z" />
         </svg>
     </a>
 
     <!-- Header & Navigation -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-black">
+            <h1 class="text-3xl font-extrabold">
                 <span class="text-brand-primary">K</span><span class="text-gray-800">INZA</span><span class="text-brand-primary">M</span><span class="text-gray-800">AX</span>
-                <span class="text-sm font-light text-gray-500 ml-2 border-l pl-2">| KM Uniforms</span>
+                <span class="text-base font-medium text-gray-500 ml-2 border-l pl-2 hidden sm:inline">KM In-House Uniforms, Jeddah</span>
             </h1>
-            <nav class="hidden md:flex space-x-6 text-gray-600 font-medium">
-                <a href="#about" class="hover:text-brand-primary transition duration-300">Our Advantage</a>
-                <a href="#products" class="hover:text-brand-primary transition duration-300">Industries</a>
-                <a href="#contact" class="hover:text-brand-primary transition duration-300">Get a Quote</a>
+            <nav class="hidden md:flex space-x-8 text-gray-600 font-semibold">
+                <a href="#process" class="hover:text-brand-accent transition duration-300">How We Work</a>
+                <a href="#advantages" class="hover:text-brand-accent transition duration-300">Core Advantages</a>
+                <a href="#products" class="hover:text-brand-accent transition duration-300">Industries</a>
             </nav>
-            <a href="#contact" class="md:hidden bg-brand-primary text-white px-3 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition duration-300">
-                Quote
+            <a href="#contact" class="brand-accent text-white px-5 py-2 rounded-lg text-sm font-bold shadow-md hover:bg-red-600 transition duration-300 transform hover:scale-105">
+                GET A FREE QUOTE
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="brand-primary text-white py-20 md:py-16">
+    <section class="bg-gray-50 py-24 md:py-36 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl sm:text-6xl font-black mb-4 leading-tight">
-                Premium Corporate Uniforms. <span class="block mt-2 text-yellow-300">In-House Quality, Unbeatable Value.</span>
-            </h2>
-            <p class="text-xl sm:text-2xl font-light max-w-3xl mx-auto mb-8 opacity-90">
-                As KINZAMAX (KM), we guarantee lower costs and higher quality control. Get unlimited design revisions and a dedicated consultation session with every order.
+            <p class="text-lg font-semibold text-brand-accent mb-3 uppercase tracking-wider">
+                Directly from Our Factory in Jeddah Since 2021
             </p>
-            <a href="#contact" class="inline-block bg-white text-brand-primary font-bold text-lg px-8 py-3 rounded-xl shadow-2xl hover:bg-gray-100 transform hover:scale-105 transition duration-300">
-                Start Your Risk-Free Consultation
+            <h2 class="text-5xl sm:text-7xl font-black mb-6 leading-tight text-gray-900">
+                Custom Corporate Uniforms.<span class="block text-brand-primary mt-2">Quality Controlled. Price Guaranteed.</span>
+            </h2>
+            <p class="text-xl sm:text-2xl font-light max-w-4xl mx-auto mb-10 text-gray-600">
+                Eliminate the middleman with KINZAMAX (KM). We handle everything in-house, ensuring **unlimited design revisions** and a seamless process from consultation to delivery.
+            </p>
+            <a href="#contact" class="inline-block brand-accent text-white font-bold text-lg px-10 py-4 rounded-xl shadow-2xl hover:bg-red-600 transform hover:scale-105 transition duration-300">
+                Request Your Free Design Consultation Today
             </a>
         </div>
     </section>
 
-    <!-- Image Showcase Section (Dynamically Loaded Human Image) -->
-    <section id="image-showcase" class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-2xl font-semibold text-gray-800 mb-6">See KINZAMAX Quality in Action</h3>
-            <div id="image-container" class="w-full max-w-4xl mx-auto bg-gray-200 rounded-2xl shadow-xl overflow-hidden min-h-64 flex items-center justify-center p-4">
-                <div id="loading-spinner" class="text-center">
-                    <div class="spinner border-t-4 border-brand-primary border-solid rounded-full w-12 h-12 mb-3 mx-auto animate-spin"></div>
-                    <p class="text-gray-600">Generating a sample uniform image...</p>
+    <!-- 4-Step Process Section -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-extrabold text-center mb-16 text-gray-900">
+                Our 4-Step KM Uniform Solution
+            </h3>
+            <div class="max-w-4xl mx-auto relative">
+                <div class="absolute inset-y-0 left-0 ml-5 md:ml-0 md:left-1/2 md:-translate-x-1/2 w-0.5 bg-gray-200 hidden sm:block"></div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Step 1: Consultation & Quote (Left) -->
+                    <div class="step-item p-4 rounded-xl" data-step="1">
+                        <div class="md:text-right md:pr-16 relative">
+                            <h4 class="text-2xl font-bold mb-2 text-brand-primary">Personalized Consultation & Quote</h4>
+                            <p class="text-gray-600">We start with a dedicated session to understand your company's brand, environment, and functional needs. You get a transparent, direct factory quote upfront.</p>
+                        </div>
+                        <div class="step-line hidden sm:block md:hidden"></div>
+                    </div>
+
+                    <!-- Step 2: Design & Revision (Right) -->
+                    <div class="step-item p-4 rounded-xl md:col-start-2" data-step="2">
+                        <div class="md:pl-16 relative">
+                            <h4 class="text-2xl font-bold mb-2 text-brand-primary">Unlimited Design & Approval</h4>
+                            <p class="text-gray-600">Our design team creates prototypes, and we offer **unlimited revisions** until the design is absolutely perfect for your team and meets your quality standards.</p>
+                        </div>
+                        <div class="step-line hidden sm:block"></div>
+                    </div>
+
+                    <!-- Step 3: In-House Manufacturing (Left) -->
+                    <div class="step-item p-4 rounded-xl" data-step="3">
+                        <div class="md:text-right md:pr-16 relative">
+                            <h4 class="text-2xl font-bold mb-2 text-brand-primary">Precision In-House Production</h4>
+                            <p class="text-gray-600">Utilizing our own workmen, machines, and Jeddah-based facility, we maintain 100% quality control, ensuring faster turnaround and unbeatable construction.</p>
+                        </div>
+                        <div class="step-line hidden sm:block md:hidden"></div>
+                    </div>
+
+                    <!-- Step 4: Quality Check & Delivery (Right) -->
+                    <div class="step-item p-4 rounded-xl md:col-start-2" data-step="4">
+                        <div class="md:pl-16 relative">
+                            <h4 class="text-2xl font-bold mb-2 text-brand-primary">Final QC & On-Time Delivery</h4>
+                            <p class="text-gray-600">Every garment undergoes a rigorous quality check before packaging and delivery, ensuring your workforce looks professional and the uniforms last.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Image will be inserted here -->
-                <img id="generated-image" class="hidden w-full h-auto object-cover rounded-xl" alt="KINZAMAX Corporate Uniform Model Image">
-                <p id="error-message" class="hidden text-red-500 font-medium">Failed to load high-quality image. Displaying placeholder.</p>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#contact" class="inline-block brand-accent text-white font-bold text-lg px-10 py-3 rounded-xl shadow-lg hover:bg-red-600 transition duration-300">
+                    Get Started with Step 1
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Our Advantage Section (The 'Why Us?') -->
-    <section id="about" class="py-16 bg-white border-t border-gray-200">
+    <!-- Manufacturing Advantage & Image Section -->
+    <section id="advantages" class="py-20 bg-gray-100 border-t border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                The KINZAMAX Competitive Edge
-            </h3>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <!-- Feature 1: Cost & Quality Control -->
-                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Direct Factory Pricing (KM Advantage)</h4>
-                    <p class="text-gray-600">
-                        Since every stitch happens in our facility, we eliminate middleman costs, giving you superior quality uniforms at a guaranteed lower price.
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="order-2 md:order-1">
+                    <h3 class="text-4xl font-extrabold mb-4 text-gray-900">
+                        The Power of KM In-House Manufacturing
+                    </h3>
+                    <p class="text-xl text-gray-600 mb-8">
+                        We are not just suppliers; we are manufacturers. Our control over the entire production chain—from thread to finished garment—is your biggest competitive advantage.
                     </p>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-brand-accent font-black mr-3 text-2xl leading-none">&bull;</span>
+                            <span class="font-semibold">Unmatched Price:</span> Direct-to-client pricing that cuts out all distributor costs.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent font-black mr-3 text-2xl leading-none">&bull;</span>
+                            <span class="font-semibold">Zero-Risk Revisions:</span> Design until you're 100% satisfied—no hidden fees for changes.
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-brand-accent font-black mr-3 text-2xl leading-none">&bull;</span>
+                            <span class="font-semibold">Guaranteed Consistency:</span> Every uniform batch meets the exact same high standard, every time.
+                        </li>
+                    </ul>
                 </div>
-                <!-- Feature 2: Faster Turnaround -->
-                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Agile & Rapid Production</h4>
-                    <p class="text-gray-600">
-                        Our dedicated in-house sewing team ensures fast production cycles and quick adjustments, making us highly responsive to your timelines.
-                    </p>
-                </div>
-                <!-- Feature 3: Personal Service & Revisions -->
-                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <svg class="w-10 h-10 mx-auto mb-4 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 0l-3.536 3.536m3.536-3.536L5.636 18.364m0 0l3.536-3.536m-3.536 3.536l3.536-3.536m-3.536 3.536l3.536-3.536"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Unlimited Revisions & Consultation</h4>
-                    <p class="text-gray-600">
-                        We offer unlimited design revisions before finalizing your order, backed by a personal consultancy session to perfectly meet your company's needs.
-                    </p>
+                <!-- Image Showcase (Order 1 for mobile) -->
+                <div class="order-1 md:order-2 text-center">
+                    <div id="image-container" class="w-full mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden min-h-64 flex items-center justify-center">
+                        <img id="permanent-image" 
+                             src="factory_image.jpg" 
+                             onerror="document.getElementById('image-error-message').classList.remove('hidden'); this.classList.add('hidden');" 
+                             class="w-full h-auto object-cover rounded-xl" 
+                             alt="KINZAMAX Manufacturing Team and Facility">
+                        
+                        <div id="image-error-message" class="hidden text-center p-8 bg-gray-200 w-full h-full flex flex-col justify-center items-center">
+                            <p class="text-red-600 font-bold mb-2">ERROR: Image Not Found (404)</p>
+                            <p class="text-gray-700">Please upload the 
+                                <code class="bg-gray-300 px-1 rounded font-mono">factory_image.jpg</code> 
+                                file to your GitHub repository's root folder to resolve this issue.
+                            </p>
+                            <img src="https://placehold.co/600x300/CCCCCC/333333?text=Placeholder+Image" alt="Placeholder" class="mt-4 rounded-lg">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Product Showcase Section (Expanded Industries) -->
-    <section id="products" class="py-16 bg-f7f7f9">
+    <section id="products" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
-                Industries We Clothe (Custom KM Solutions)
+            <h3 class="text-3xl font-bold text-center mb-6 text-gray-900">
+                Specialized Uniforms for Every Industry
             </h3>
+            <p class="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                From durable industrial workwear to sharp executive apparel, KINZAMAX designs and manufactures uniforms tailored for the specific demands of your sector.
+            </p>
 
             <!-- Grid of 12 Industries -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 
                 <!-- Category 1: Executive & Office -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/004c99/ffffff?text=Office" alt="Office Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/004c99/ffffff?text=Office" alt="Executive Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Executive & Office</h4>
                 </div>
                 
                 <!-- Category 2: Hospitality & Service -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/5B8B67/ffffff?text=Hospitality" alt="Hospitality Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/5B8B67/ffffff?text=Hospitality" alt="Hospitality Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Hospitality & Service</h4>
                 </div>
 
-                <!-- Category 3: Industrial & Workwear -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/FFA500/000000?text=Industrial" alt="Industrial Workwear" class="w-full h-24 object-cover rounded-lg mb-3">
-                    <h4 class="text-lg font-bold text-gray-800">Industrial Workwear</h4>
-                </div>
-
-                <!-- Category 4: Healthcare -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/B0E0E6/004c99?text=Healthcare" alt="Healthcare Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <!-- Category 3: Healthcare -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/B0E0E6/004c99?text=Healthcare" alt="Healthcare Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Healthcare (Scrubs, Coats)</h4>
                 </div>
                 
-                <!-- Category 5: Automotive -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/4B4E54/ffffff?text=Automotive" alt="Automotive Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <!-- Category 4: Automotive -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/4B4E54/ffffff?text=Automotive" alt="Automotive Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Automotive Services</h4>
+                </div>
+
+                <!-- Category 5: Construction -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/A52A2A/ffffff?text=Construction" alt="Construction Workwear" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
+                    <h4 class="text-lg font-bold text-gray-800">Construction & Safety</h4>
                 </div>
                 
                 <!-- Category 6: Maintenance -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/696969/ffffff?text=Maintenance" alt="Maintenance Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/696969/ffffff?text=Maintenance" alt="Maintenance Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Building Maintenance</h4>
                 </div>
 
                 <!-- Category 7: Manufacturing -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/3CB371/ffffff?text=Manufacturing" alt="Manufacturing Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/3CB371/ffffff?text=Manufacturing" alt="Manufacturing Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Manufacturing & Factory</h4>
                 </div>
 
                 <!-- Category 8: Transportation -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/8B0000/ffffff?text=Transportation" alt="Transportation Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/8B0000/ffffff?text=Transportation" alt="Transportation Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Logistics & Transportation</h4>
                 </div>
 
-                <!-- Category 9: Construction -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/A52A2A/ffffff?text=Construction" alt="Construction Workwear" class="w-full h-24 object-cover rounded-lg mb-3">
-                    <h4 class="text-lg font-bold text-gray-800">Construction & Safety</h4>
-                </div>
-
-                <!-- Category 10: Landscaping -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/32CD32/ffffff?text=Landscaping" alt="Landscaping Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <!-- Category 9: Landscaping -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/32CD32/ffffff?text=Landscaping" alt="Landscaping Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Landscaping & Gardens</h4>
                 </div>
 
-                <!-- Category 11: Culinary & Food Processing -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/8A2BE2/ffffff?text=Culinary" alt="Culinary Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
+                <!-- Category 10: Culinary & Food Processing -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/8A2BE2/ffffff?text=Culinary" alt="Culinary Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
                     <h4 class="text-lg font-bold text-gray-800">Culinary & Food Prep</h4>
                 </div>
-
-                <!-- Category 12: Housekeeping & Waste -->
-                <div class="bg-white rounded-xl shadow-md category-card text-center p-4">
-                    <img src="https://placehold.co/400x200/4682B4/ffffff?text=Cleaning" alt="Housekeeping Uniforms" class="w-full h-24 object-cover rounded-lg mb-3">
-                    <h4 class="text-lg font-bold text-gray-800">Housekeeping & Waste Mgt.</h4>
+                
+                <!-- Category 11: Specialty Trade -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/FFD700/000000?text=Specialty+Trade" alt="Specialty Trade Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
+                    <h4 class="text-lg font-bold text-gray-800">Specialty Trade & Artisans</h4>
                 </div>
-            </div>
-            
-            <div class="text-center mt-10">
-                <a href="#contact" class="inline-block bg-brand-primary text-white font-bold text-lg px-8 py-3 rounded-xl shadow-xl hover:bg-blue-700 transition duration-300">
-                    Get Free Design Consultation
-                </a>
+
+                <!-- Category 12: Waste Management -->
+                <div class="bg-gray-50 rounded-xl shadow-md category-card text-center p-4 border-t-4 border-brand-primary">
+                    <img src="https://placehold.co/400x200/4682B4/ffffff?text=Waste+Mgt" alt="Waste Management Uniforms" class="w-full h-24 object-cover rounded-lg mb-3 grayscale hover:grayscale-0 transition duration-300">
+                    <h4 class="text-lg font-bold text-gray-800">Waste Management</h4>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Quote Form Section -->
-    <section id="contact" class="py-20 bg-gray-100">
+    <section id="contact" class="py-20 brand-primary">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-4xl font-extrabold text-center mb-4 text-gray-800">
-                Start Your KM Uniform Project
+            <h3 class="text-4xl font-extrabold text-center mb-4 text-white">
+                Ready for a Quote? Contact KINZAMAX
             </h3>
-            <p class="text-center text-xl text-gray-600 mb-10">
-                Contact KINZAMAX today for a direct quote from our Jeddah manufacturing floor.
+            <p class="text-center text-xl text-blue-100 mb-10">
+                Get your direct factory pricing and start your risk-free design consultation now.
             </p>
 
             <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-200">
@@ -269,22 +360,15 @@
                     </div>
 
                     <div class="mb-6">
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
-                        <input type="tel" id="phone" name="phone"
-                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-primary focus:border-brand-primary transition duration-150"
-                               placeholder="+966 5x xxxxxxx">
-                    </div>
-
-                    <div class="mb-6">
                         <label for="details" class="block text-sm font-medium text-gray-700 mb-1">Project Details / Uniform Needs</label>
                         <textarea id="details" name="details" rows="5" required
                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-brand-primary focus:border-brand-primary transition duration-150"
-                                  placeholder="E.g., We need 50 polo shirts, 25 blazers, and 50 pairs of trousers. Needs include logo embroidery and custom sizing."></textarea>
+                                  placeholder="Tell us about the industry, garment types, and quantity needed."></textarea>
                     </div>
 
                     <button type="submit"
-                            class="w-full brand-primary text-white font-bold text-lg px-8 py-3 rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-[1.01]">
-                        Request a Free Quote & Consultation
+                            class="w-full brand-accent text-white font-bold text-lg px-8 py-3 rounded-xl shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-[1.01]">
+                        Submit Project Details
                     </button>
                     
                     <p id="submissionMessage" class="mt-4 text-center text-sm text-green-600 font-semibold hidden">
@@ -293,15 +377,21 @@
                 </form>
 
                 <div class="mt-8 text-center text-gray-600 text-lg border-t pt-6">
-                    <p class="font-semibold">Or Chat/Call Us Directly:</p>
-                    <p class="text-2xl font-extrabold text-brand-primary mt-1">
-                        +966 57 312 8127
-                    </p>
-                    <p class="mt-4">
-                        <span class="font-semibold">Email:</span> <a href="mailto:info@kinzamax.com" class="hover:underline text-brand-primary">info@kinzamax.com</a>
-                    </p>
-                    <p class="text-sm mt-2">
-                        <span class="font-semibold">Factory Address:</span> Gharnatah Commercial Center, Prince Sultan Street, Jeddah 23321, Saudi Arabia
+                    <p class="font-semibold text-gray-700">Or Contact Us Directly:</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <p class="text-xl font-extrabold text-brand-primary">
+                                +966 57 312 8127
+                            </p>
+                            <p class="text-sm">Call or WhatsApp</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg">
+                            <a href="mailto:info@kinzamax.com" class="text-xl font-extrabold text-brand-primary hover:underline">info@kinzamax.com</a>
+                            <p class="text-sm">Official Email</p>
+                        </div>
+                    </div>
+                    <p class="text-sm mt-6 text-blue-100/70">
+                        <span class="font-semibold text-white">Factory Address:</span> Gharnatah Commercial Center, Prince Sultan Street, Jeddah 23321, Saudi Arabia
                     </p>
                 </div>
             </div>
@@ -309,96 +399,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="brand-primary py-8">
+    <footer class="bg-gray-800 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white text-sm">
             <p>&copy; 2025 KINZAMAX (KM Uniforms). All Rights Reserved. | Custom Manufacturing Since 2021</p>
-            <p class="mt-2 text-xs opacity-70">Made with pride in Jeddah, Saudi Arabia.</p>
+            <div class="mt-4 text-xs opacity-70 space-x-4">
+                <a href="https://wa.me/966573128127" target="_blank" class="hover:text-brand-accent">WhatsApp</a>
+                <a href="#contact" class="hover:text-brand-accent">Get a Quote</a>
+                <span class="text-white/30">|</span> Made with pride in Jeddah, Saudi Arabia.
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript for image generation, form submission, and smooth scrolling -->
+    <!-- JavaScript for form submission and smooth scrolling -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const contactForm = document.getElementById('contactForm');
             const submissionMessage = document.getElementById('submissionMessage');
             
-            const imageContainer = document.getElementById('image-container');
-            const loadingSpinner = document.getElementById('loading-spinner');
-            const generatedImage = document.getElementById('generated-image');
-            const errorMessage = document.getElementById('error-message');
-
-            const apiKey = ""; // Canvas will provide this if empty string
-
-            // --- API UTILITY FUNCTIONS ---
-
-            // Implement exponential backoff for fetch calls
-            async function exponentialBackoff(fn, maxRetries = 5, delay = 1000) {
-                for (let i = 0; i < maxRetries; i++) {
-                    try {
-                        return await fn();
-                    } catch (error) {
-                        if (i === maxRetries - 1) throw error;
-                        await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
-                    }
-                }
-            }
-
-            // Function to generate and display the image
-            async function generateImage() {
-                // Show loading spinner
-                loadingSpinner.classList.remove('hidden');
-                imageContainer.classList.remove('p-4');
-                generatedImage.classList.add('hidden');
-                errorMessage.classList.add('hidden');
-                
-                const prompt = "A photorealistic image of a diverse team of corporate employees in Saudi Arabia, wearing modern, tailored navy blue and gold uniform shirts with a subtle KM logo. They are smiling and standing in front of a clean, modern textile factory interior. Highly detailed, high-resolution photo.";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
-                
-                const payload = { 
-                    instances: { prompt: prompt }, 
-                    parameters: { "sampleCount": 1 } 
-                };
-
-                try {
-                    const response = await exponentialBackoff(async () => {
-                        const res = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-                        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                        return res;
-                    });
-
-                    const result = await response.json();
-                    
-                    if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
-                        const base64Data = result.predictions[0].bytesBase64Encoded;
-                        const imageUrl = `data:image/png;base64,${base64Data}`;
-                        
-                        // Hide spinner, show image
-                        loadingSpinner.classList.add('hidden');
-                        generatedImage.src = imageUrl;
-                        generatedImage.classList.remove('hidden');
-                        imageContainer.classList.remove('bg-gray-200', 'min-h-64', 'flex', 'items-center', 'justify-center', 'p-4');
-                    } else {
-                        throw new Error("Invalid image response structure.");
-                    }
-
-                } catch (error) {
-                    console.error("Image generation failed:", error);
-                    // Hide spinner, show error message
-                    loadingSpinner.classList.add('hidden');
-                    errorMessage.classList.remove('hidden');
-                    imageContainer.classList.add('p-4'); // Re-add padding for placeholder look
-                    generatedImage.src = 'https://placehold.co/900x450/004c99/ffffff?text=KINZAMAX+Uniforms+-+Professional+Team';
-                    generatedImage.classList.remove('hidden');
-                }
-            }
-
-
-            // --- UI AND LOGIC FUNCTIONS ---
-
             // Form submission simulation
             contactForm.addEventListener('submit', function(event) {
                 event.preventDefault();
@@ -424,9 +441,6 @@
                     });
                 });
             });
-
-            // Start image generation on load
-            generateImage();
         });
     </script>
 
